@@ -3,6 +3,7 @@
 #include "utility/sleep/Sleeper.h"
 #include "entity/Vector.h"
 #include "mysql/DbProcess.h"
+#include "entity/Velocity.h"
 
 void initSingleton()
 {
@@ -34,8 +35,8 @@ int main()
     {
         int randomNumber = RandomGenerator::generate(300,1000);
         Sleeper::sleep(randomNumber);
-        Vector vec(RandomGenerator::generate(),RandomGenerator::generate());
-        dbProcess->insertData(vec.toQueryString());
+        Velocity velocity(RandomGenerator::generate(),RandomGenerator::generate());
+        dbProcess->insertData(velocity.toQueryString());
 
     }
 
