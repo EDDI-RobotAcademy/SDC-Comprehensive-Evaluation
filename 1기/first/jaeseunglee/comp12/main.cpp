@@ -5,6 +5,7 @@
 #include "mysql/DbProcess.h"
 #include "entity/Velocity.h"
 #include "entity/Acceleration.h"
+#include "entity/Displacement.h"
 
 void initSingleton()
 {
@@ -48,7 +49,8 @@ int main()
         totalDistance += velocity.calculateDistance(randomSleep/100);
 
         std::cout << "\n[초기위치를 기반으로한 현재 변위]" <<  std::endl;
-        (velocity.getVector()-originVelocity.getVector()).printVectorInfo();
+        Displacement displacement(velocity.getVector()-originVelocity.getVector());
+        displacement.getVectorDisplacement().printVectorInfo();
         beforeVelocity = velocity;
         Sleeper::sleep(randomSleep);
         std::cout << "\n" << std::endl;
