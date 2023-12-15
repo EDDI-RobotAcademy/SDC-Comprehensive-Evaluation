@@ -7,6 +7,7 @@
 
 
 #include <vector>
+#include <string>
 
 class Vector {
 private:
@@ -18,6 +19,7 @@ public:
     float getX();
     float getY();
     float getSizeOfVector();
+    std::string toQueryString();
 };
 
 

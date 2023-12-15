@@ -19,3 +19,11 @@ float Vector::getSizeOfVector() {
     auto result = (float)sqrt(pow(x,2) + pow(y,2));
     return result;
 }
+
+std::string Vector::toQueryString(){
+    std::string X = std::to_string(x);
+    std::string Y = std::to_string(y);
+    std::string queryString = "INSERT INTO vectorInfo (x, y) VALUES \
+                          ('" + X + "', '" + Y + "' )";
+    return queryString;
+}

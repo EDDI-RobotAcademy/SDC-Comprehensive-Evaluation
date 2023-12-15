@@ -4,6 +4,8 @@
 
 #include "DbProcess.h"
 
+DbProcess* DbProcess::instance = nullptr;
+
 DbProcess::DbProcess(const char *_host, const char *_user, const char *_pass, const char *_dbName)
         : conn(nullptr), DB_HOST(_host), DB_USER(_user), DB_PASS(_pass), DB_NAME(_dbName) {}
 

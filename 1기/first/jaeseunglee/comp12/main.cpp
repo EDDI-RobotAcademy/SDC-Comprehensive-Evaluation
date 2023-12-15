@@ -16,16 +16,27 @@ void initSingleton()
 }
 
 
-
+void vectorToDb(Vector _vec){
+    std::string vecX = std::to_string(_vec.getX());
+    std::string vecY = std::to_string(_vec.getY());
+    std::string queryString = "INSERT INTO board (x, y) VALUES \
+                          ('" + vecX + "', '" + vecY + "' )";
+    DbProcess *dbProcess = DbProcess::getInstance();
+    dbProcess->insertData(queryString);
+}
 
 
 int main()
 {
-
+    initSingleton();
+    DbProcess *dbProcess = DbProcess::getInstance();
     for(int i = 0; i<10; i++)
     {
         int randomNumber = RandomGenerator::generate(300,1000);
         Sleeper::sleep(randomNumber);
+        Vector vec(RandomGenerator::generate(),RandomGenerator::generate());
+        dbProcess->insertData(vec.toQueryString());
+
     }
 
     return 0;
