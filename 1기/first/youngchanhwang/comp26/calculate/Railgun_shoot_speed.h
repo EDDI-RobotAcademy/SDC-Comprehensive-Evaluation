@@ -1,0 +1,8 @@
+//
+// Created by eddi on 23. 12. 15.
+//
+
+#ifndef COMP26_RAILGUN_SHOOT_SPEED_H
+#define COMP26_RAILGUN_SHOOT_SPEED_H
+
+#endif //COMP26_RAILGUN_SHOOT_SPEED_H
