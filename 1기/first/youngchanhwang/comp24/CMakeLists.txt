@@ -23,11 +23,12 @@ enable_testing()
 
 file(GLOB C_SOURCES
 	"entity/*.c"
+    "sample/*.c"
+
 )
 
 file(GLOB CPP_TEST_SOURCES
     "tests/*.cpp"
-    "tests/product_test/*.cpp"
 )
 
 add_library(logic_lib ${C_SOURCES})
@@ -59,7 +60,6 @@ add_executable(
     ${MAIN_SOURCES}
         entity/Product.c
         entity/Product.h
-        tests/product_test/go_test.cpp
 )
 
 add_custom_target(run
