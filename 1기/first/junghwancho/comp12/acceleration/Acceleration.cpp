@@ -3,3 +3,11 @@
 //
 
 #include "Acceleration.h"
+#include "../velocity/Velocity.h"
+
+Acceleration::Acceleration(double acceleration) : acceleration(acceleration) {}
+
+double Acceleration::getAcceleration() const {
+    return acceleration;
+}
+

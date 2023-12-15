@@ -7,6 +7,14 @@
 
 
 class Acceleration {
+public:
+    Acceleration(double acceleration);
+    double getAcceleration() const;
+
+
+
+private:
+    double acceleration;
 
 };
 
