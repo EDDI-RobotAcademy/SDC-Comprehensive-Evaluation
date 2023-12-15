@@ -11,15 +11,18 @@
 
 class Vector {
 private:
-    float x;
-    float y;
+    double x;
+    double y;
 public:
-    Vector(float _x, float _y);
+    Vector(double _x, double _y);
     ~Vector() = default;
-    float getX();
-    float getY();
-    float getSizeOfVector();
+    double getX();
+    double getY();
+    double magnitude();
+    Vector normalized();
     std::string toQueryString();
+
+    Vector operator-(const Vector& other) const;
 };
 
 

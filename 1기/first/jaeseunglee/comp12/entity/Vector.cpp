@@ -5,19 +5,24 @@
 #include "Vector.h"
 #include <cmath>
 
-Vector::Vector(float _x, float _y) : x(_x), y(_y) {}
+Vector::Vector(double _x, double _y) : x(_x), y(_y) {}
 
-float Vector::getX() {
+double Vector::getX() {
     return x;
 }
 
-float Vector::getY() {
+double Vector::getY() {
     return y;
 }
 
-float Vector::getSizeOfVector() {
-    auto result = (float)sqrt(pow(x,2) + pow(y,2));
+double Vector::magnitude() {
+    auto result = sqrt(pow(x,2) + pow(y,2));
     return result;
+}
+
+Vector Vector::normalized() {
+    double mag = magnitude();
+    return Vector(x / mag, y / mag);
 }
 
 std::string Vector::toQueryString(){
@@ -26,4 +31,11 @@ std::string Vector::toQueryString(){
     std::string queryString = "INSERT INTO vectorInfo (x, y) VALUES \
                           ('" + X + "', '" + Y + "' )";
     return queryString;
+}
+
+
+
+
+Vector Vector::operator-(const Vector &other) const {
+    return Vector(x-other.x, y-other.y);
 }
