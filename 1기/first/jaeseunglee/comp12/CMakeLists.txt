@@ -24,6 +24,8 @@ add_executable(
         ${MAIN_SOURCE}
         ${CPP_SOURCES}
         entity/Velocity.h
+        entity/Acceleration.cpp
+        entity/Acceleration.h
 )
 
 target_include_directories(comp12 PRIVATE ${LIBMYSQLCLIENT_INCLUDE_DIRS})

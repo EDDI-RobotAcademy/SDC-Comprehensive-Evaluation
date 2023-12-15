@@ -25,4 +25,12 @@ double Velocity::speed() {
     return vectorOfVelocity.magnitude();
 }
 
+Vector Velocity::getVector() {
+    return vectorOfVelocity;
+}
+
+double Velocity::calculateDistance(double _time) {
+    return vectorOfVelocity.magnitude() * _time;
+}
+
 

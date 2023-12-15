@@ -31,14 +31,17 @@ int main()
 {
     initSingleton();
     DbProcess *dbProcess = DbProcess::getInstance();
+    double totalDistance = 0;
     for(int i = 0; i<10; i++)
     {
-        int randomNumber = RandomGenerator::generate(300,1000);
-        Sleeper::sleep(randomNumber);
-        Velocity velocity(RandomGenerator::generate(),RandomGenerator::generate());
+        int randomSleep = RandomGenerator::generate(300,1000);
+
+        Vector vec(RandomGenerator::generate(),RandomGenerator::generate());
+        Velocity velocity(vec);
         dbProcess->insertData(velocity.toQueryString());
-
+        totalDistance += velocity.calculateDistance(randomSleep);
+        Sleeper::sleep(randomSleep);
     }
-
+    std::cout << "총 이동거리: " << totalDistance << std::endl;
     return 0;
 }

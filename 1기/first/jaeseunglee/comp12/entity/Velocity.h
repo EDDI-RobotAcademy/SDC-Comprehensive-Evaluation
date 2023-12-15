@@ -15,11 +15,11 @@ private:
 public:
     Velocity(Vector _vectorOfVelocity);
     ~Velocity() = default;
-
+    Vector getVector();
     std::string toQueryString();
     Vector normalized();
     double speed();
-
+    double calculateDistance(double _time);
 
 };
 
