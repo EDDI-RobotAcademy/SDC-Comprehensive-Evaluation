@@ -5,6 +5,11 @@
 #ifndef COMP24_PRODUCT_H
 #define COMP24_PRODUCT_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 typedef struct _product product;
 
 struct _product
@@ -18,6 +23,8 @@ struct _product
 
 
 product *init_product(int, int, const char*,const char*);
-
+#ifdef __cplusplus
+}
+#endif
 
 #endif //COMP24_PRODUCT_H

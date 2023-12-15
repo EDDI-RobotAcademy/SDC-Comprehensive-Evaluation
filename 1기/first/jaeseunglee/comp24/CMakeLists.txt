@@ -22,44 +22,43 @@ endif()
 enable_testing()
 
 file(GLOB C_SOURCES
-	"entity/*.c"
-
+        "entity/*.c"
 )
 
 file(GLOB CPP_TEST_SOURCES
-    "tests/gtest/*.cpp"
-    "tests/gtest/product_test/*.cpp"
+        "tests/gtest/*.cpp"
+        "tests/gtest/product_test/*.cpp"
 )
 
 add_library(logic_lib ${C_SOURCES})
 
-add_executable(every_unit_test ${CPP_TEST_SOURCES} "tests/gtest/product_test/ptest.cpp" ${C_SOURCES})
+add_executable(every_unit_test ${CPP_TEST_SOURCES} "tests/gtest/gtest_main.cpp" ${C_SOURCES})
 target_link_libraries(every_unit_test PRIVATE ${GTEST_LIBRARIES} pthread logic_lib)
 
 add_test(NAME every_unit_test COMMAND every_unit_test)
 set_tests_properties(every_unit_test PROPERTIES FAIL_REGULAR_EXPRESSION ".*[Ff]ail.*")
 
 add_custom_command(
-    TARGET every_unit_test
-    POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E echo "Checking test results..."
-    COMMAND ${CMAKE_COMMAND} -E env TEST_RESULT=$<TARGET_FILE:every_unit_test> ${CMAKE_CURRENT_SOURCE_DIR}/build_script.sh
-    COMMAND_ERROR_IS_FATAL
-    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
-    COMMENT "Running every_unit_test and building c_app if tests pass..."
-    VERBATIM
+        TARGET every_unit_test
+        POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E echo "Checking test results..."
+        COMMAND ${CMAKE_COMMAND} -E env TEST_RESULT=$<TARGET_FILE:every_unit_test> ${CMAKE_CURRENT_SOURCE_DIR}/build_script.sh
+        COMMAND_ERROR_IS_FATAL
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+        COMMENT "Running every_unit_test and building c_app if tests pass..."
+        VERBATIM
 )
 
 file(GLOB MAIN_SOURCES
-    "*.c"
+        "*.c"
 )
 
 add_executable(
-    c_app
-    ${C_SOURCES}
-    ${MAIN_SOURCES}
+        c_app
+        ${C_SOURCES}
+        ${MAIN_SOURCES}
 )
 
 add_custom_target(run
-    DEPENDS every_unit_test
+        DEPENDS every_unit_test
 )
