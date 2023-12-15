@@ -9,4 +9,6 @@ add_executable(comp12 main.cpp
         mysql/DbProcess.cpp
         mysql/DbProcess.h
         utility/random/RandomGenerator.cpp
-        utility/random/RandomGenerator.h)
+        utility/random/RandomGenerator.h
+        utility/sleep/Sleeper.cpp
+        utility/sleep/Sleeper.h)
