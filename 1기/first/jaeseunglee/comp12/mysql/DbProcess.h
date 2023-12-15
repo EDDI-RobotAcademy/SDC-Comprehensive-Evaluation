@@ -26,6 +26,7 @@ public:
     static DbProcess* getInstance();
 
     bool connect();
+    bool insertData(const std::string& queryString);
 
 };
 
