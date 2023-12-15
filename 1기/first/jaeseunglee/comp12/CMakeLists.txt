@@ -7,4 +7,6 @@ add_executable(comp12 main.cpp
         entity/Vector.cpp
         entity/Vector.h
         mysql/DbProcess.cpp
-        mysql/DbProcess.h)
+        mysql/DbProcess.h
+        utility/RandomGenerator.cpp
+        utility/RandomGenerator.h)
