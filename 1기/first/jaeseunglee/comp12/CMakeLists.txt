@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(comp12 main.cpp
         entity/Vector.cpp
-        entity/Vector.h)
+        entity/Vector.h
+        mysql/DbProcess.cpp
+        mysql/DbProcess.h)
