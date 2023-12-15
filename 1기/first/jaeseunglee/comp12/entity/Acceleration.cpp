@@ -14,4 +14,8 @@ double Acceleration::getAccelY() {
     return vectorOfAcceleration.getY();
 }
 
+Vector Acceleration::getAccelVector() {
+    return vectorOfAcceleration;
+}
+
 

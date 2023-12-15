@@ -4,6 +4,7 @@
 #include "entity/Vector.h"
 #include "mysql/DbProcess.h"
 #include "entity/Velocity.h"
+#include "entity/Acceleration.h"
 
 void initSingleton()
 {
@@ -31,6 +32,8 @@ int main()
 {
     initSingleton();
     DbProcess *dbProcess = DbProcess::getInstance();
+    Vector originVector(0,0);
+    Velocity originVelocity(originVector);
     double totalDistance = 0;
     for(int i = 0; i<10; i++)
     {
@@ -38,9 +41,12 @@ int main()
 
         Vector vec(RandomGenerator::generate(),RandomGenerator::generate());
         Velocity velocity(vec);
+        Acceleration accel(velocity ,originVelocity);
+        accel.getAccelVector().printVectorInfo();
         dbProcess->insertData(velocity.toQueryString());
         totalDistance += velocity.calculateDistance(randomSleep/100);
         Sleeper::sleep(randomSleep);
+        originVelocity = velocity;
 
     }
     std::cout << "총 이동거리: " << totalDistance << std::endl;

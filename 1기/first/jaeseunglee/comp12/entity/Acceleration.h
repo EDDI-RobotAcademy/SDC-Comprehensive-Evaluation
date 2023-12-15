@@ -15,6 +15,7 @@ public:
     Acceleration(Velocity afterVelocity, Velocity beforeVelocity);
     double getAccelX();
     double getAccelY();
+    Vector getAccelVector();
 };
 
 
