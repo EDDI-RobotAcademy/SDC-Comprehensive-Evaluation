@@ -12,7 +12,7 @@ class Acceleration {
 private:
     Vector vectorOfAcceleration;
 public:
-    Acceleration(Velocity afterVelocity, Velocity beforeVelocity);
+    Acceleration(Velocity afterVelocity, Velocity beforeVelocity, double time);
     double getAccelX();
     double getAccelY();
     Vector getAccelVector();

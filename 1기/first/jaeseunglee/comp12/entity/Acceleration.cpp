@@ -4,7 +4,7 @@
 
 #include "Acceleration.h"
 
-Acceleration::Acceleration(Velocity afterVelocity, Velocity beforeVelocity) : vectorOfAcceleration (afterVelocity.getVector() - beforeVelocity.getVector()){}
+Acceleration::Acceleration(Velocity afterVelocity, Velocity beforeVelocity, double time) : vectorOfAcceleration ((afterVelocity.getVector() - beforeVelocity.getVector())/time){}
 
 double Acceleration::getAccelX() {
     return vectorOfAcceleration.getX();

@@ -23,7 +23,7 @@ add_executable(
         comp12
         ${MAIN_SOURCE}
         ${CPP_SOURCES}
-      
+
 )
 
 target_include_directories(comp12 PRIVATE ${LIBMYSQLCLIENT_INCLUDE_DIRS})

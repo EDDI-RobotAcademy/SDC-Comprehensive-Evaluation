@@ -43,7 +43,7 @@ int main()
 
         Vector vec(RandomGenerator::generate(),RandomGenerator::generate());
         Velocity velocity(vec);
-        Acceleration accel(velocity ,beforeVelocity);
+        Acceleration accel(velocity ,beforeVelocity, randomSleep/100);
         accel.getAccelVector().printVectorInfo();
         dbProcess->insertData(velocity.toQueryString());
         totalDistance += velocity.calculateDistance(randomSleep/100);

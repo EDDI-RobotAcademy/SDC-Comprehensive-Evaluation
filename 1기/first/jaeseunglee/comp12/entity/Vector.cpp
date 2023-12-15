@@ -45,3 +45,7 @@ void Vector::printVectorInfo() {
     std::cout << "x: " << x << "y: " << y << std::endl;
 
 }
+
+Vector Vector::operator/(const double &other) const {
+    return Vector(x/other, y/other);
+}

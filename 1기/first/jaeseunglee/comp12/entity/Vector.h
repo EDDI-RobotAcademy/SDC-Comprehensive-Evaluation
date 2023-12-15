@@ -24,6 +24,7 @@ public:
     void printVectorInfo();
 
     Vector operator-(const Vector& other) const;
+    Vector operator/(const double& other) const;
 };
 
 
