@@ -28,3 +28,7 @@ bool DbProcess::connect() {
     conn = mysql_init(nullptr);
     return (mysql_real_connect(conn, DB_HOST, DB_USER, DB_PASS, DB_NAME, 3306, nullptr, 0) != nullptr);
 }
+
+bool DbProcess::insertData(const std::string& queryString) {
+    return (mysql_query(conn, queryString.c_str()) == 0);
+}
