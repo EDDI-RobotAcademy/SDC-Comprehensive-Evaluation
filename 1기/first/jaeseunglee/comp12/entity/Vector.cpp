@@ -4,6 +4,7 @@
 
 #include "Vector.h"
 #include <cmath>
+#include <iostream>
 
 Vector::Vector(double _x, double _y) : x(_x), y(_y) {}
 
@@ -38,4 +39,9 @@ std::string Vector::toQueryString(){
 
 Vector Vector::operator-(const Vector &other) const {
     return Vector(x-other.x, y-other.y);
+}
+
+void Vector::printVectorInfo() {
+    std::cout << "x: " << x << "y: " << y << std::endl;
+
 }

@@ -21,6 +21,7 @@ public:
     double magnitude();
     Vector normalized();
     std::string toQueryString();
+    void printVectorInfo();
 
     Vector operator-(const Vector& other) const;
 };

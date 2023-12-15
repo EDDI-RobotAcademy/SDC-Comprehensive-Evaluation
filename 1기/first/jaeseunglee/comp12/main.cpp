@@ -39,8 +39,9 @@ int main()
         Vector vec(RandomGenerator::generate(),RandomGenerator::generate());
         Velocity velocity(vec);
         dbProcess->insertData(velocity.toQueryString());
-        totalDistance += velocity.calculateDistance(randomSleep);
+        totalDistance += velocity.calculateDistance(randomSleep/100);
         Sleeper::sleep(randomSleep);
+
     }
     std::cout << "총 이동거리: " << totalDistance << std::endl;
     return 0;

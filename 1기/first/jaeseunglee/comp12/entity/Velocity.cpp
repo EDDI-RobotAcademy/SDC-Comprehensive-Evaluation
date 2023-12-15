@@ -13,7 +13,7 @@ std::string Velocity::toQueryString() {
     std::string Y = std::to_string(vectorOfVelocity.getY());
     std::string queryString = "INSERT INTO velocityInfo (x, y) VALUES \
                           ('" + X + "', '" + Y + "' )";
-
+    vectorOfVelocity.printVectorInfo();
     return queryString;
 }
 
@@ -30,6 +30,8 @@ Vector Velocity::getVector() {
 }
 
 double Velocity::calculateDistance(double _time) {
+    vectorOfVelocity.printVectorInfo();
+    std::cout << "time: " << _time << std::endl;
     return vectorOfVelocity.magnitude() * _time;
 }
 
