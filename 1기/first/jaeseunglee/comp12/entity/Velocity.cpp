@@ -5,17 +5,24 @@
 #include <iostream>
 #include "Velocity.h"
 
-Velocity::Velocity(double _speed, double _direction)
-        : speed(_speed), direction(_direction){}
+Velocity::Velocity(Vector _vectorOfVelocity)
+        : vectorOfVelocity(_vectorOfVelocity){}
 
 std::string Velocity::toQueryString() {
-    std::string strSpeed = std::to_string(speed);
-    std::string strDirection = std::to_string(direction);
-    std::string queryString = "INSERT INTO velocityInfo (speed, direction) VALUES \
-                          ('" + strSpeed + "', '" + strDirection + "' )";
+    std::string X = std::to_string(vectorOfVelocity.getX());
+    std::string Y = std::to_string(vectorOfVelocity.getY());
+    std::string queryString = "INSERT INTO velocityInfo (x, y) VALUES \
+                          ('" + X + "', '" + Y + "' )";
 
-    std::cout << "속도: " << strSpeed << "m/s, 방향: " << strDirection << std::endl;
     return queryString;
+}
+
+Vector Velocity::normalized() {
+    return vectorOfVelocity.normalized();
+}
+
+double Velocity::speed() {
+    return vectorOfVelocity.magnitude();
 }
 
 

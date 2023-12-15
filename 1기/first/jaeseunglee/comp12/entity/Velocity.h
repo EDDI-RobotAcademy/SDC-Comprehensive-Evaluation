@@ -7,17 +7,18 @@
 
 
 #include <string>
+#include "Vector.h"
 
 class Velocity {
 private:
-    double speed;
-    double direction;
+    Vector vectorOfVelocity;
 public:
-    Velocity(double _speed, double _direction);
+    Velocity(Vector _vectorOfVelocity);
     ~Velocity() = default;
 
     std::string toQueryString();
-
+    Vector normalized();
+    double speed();
 
 
 };
