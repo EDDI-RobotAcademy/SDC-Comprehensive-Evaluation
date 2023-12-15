@@ -34,6 +34,7 @@ int main()
     DbProcess *dbProcess = DbProcess::getInstance();
     Vector originVector(0,0);
     Velocity originVelocity(originVector);
+    Velocity beforeVelocity(originVector);
     double totalDistance = 0;
     for(int i = 0; i<10; i++)
     {
@@ -41,13 +42,16 @@ int main()
 
         Vector vec(RandomGenerator::generate(),RandomGenerator::generate());
         Velocity velocity(vec);
-        Acceleration accel(velocity ,originVelocity);
+        Acceleration accel(velocity ,beforeVelocity);
         accel.getAccelVector().printVectorInfo();
         dbProcess->insertData(velocity.toQueryString());
         totalDistance += velocity.calculateDistance(randomSleep/100);
-        Sleeper::sleep(randomSleep);
-        originVelocity = velocity;
 
+        std::cout << "\n[초기위치를 기반으로한 현재 변위]" <<  std::endl;
+        (velocity.getVector()-originVelocity.getVector()).printVectorInfo();
+        beforeVelocity = velocity;
+        Sleeper::sleep(randomSleep);
+        std::cout << "\n" << std::endl;
     }
     std::cout << "총 이동거리: " << totalDistance << std::endl;
     return 0;
