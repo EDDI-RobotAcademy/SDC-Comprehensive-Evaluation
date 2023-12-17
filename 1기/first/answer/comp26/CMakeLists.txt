@@ -14,9 +14,15 @@ add_executable(comp26 main.cpp
         railgun/repository/RailGunRepository.h
         railgun/repository/RailGunRepositoryImpl.cpp
         railgun/repository/RailGunRepositoryImpl.h
-        velocity/repository/VelocityRepository.h
-        velocity/repository/VelocityRepositoryImpl.cpp
-        velocity/repository/VelocityRepositoryImpl.h
-        velocity/service/VelocityService.h
-        velocity/service/VelocityServiceImpl.cpp
-        velocity/service/VelocityServiceImpl.h)
+        uniformVelocityMotion/repository/UniformVelocityMotionRepository.h
+        uniformVelocityMotion/service/UniformVelocityMotionService.h
+        uniformAccelerationMotion/repository/UniformAccelerationMotionRepository.h
+        uniformAccelerationMotion/repository/UniformAccelerationMotionRepositoryImpl.cpp
+        uniformAccelerationMotion/repository/UniformAccelerationMotionRepositoryImpl.h
+        uniformAccelerationMotion/service/UniformAccelerationMotionService.h
+        uniformAccelerationMotion/service/UniformAccelerationMotionServiceImpl.cpp
+        uniformAccelerationMotion/service/UniformAccelerationMotionServiceImpl.h
+        uniformVelocityMotion/repository/UniformVelocityMotionRepositoryImpl.cpp
+        uniformVelocityMotion/repository/UniformVelocityMotionRepositoryImpl.h
+        uniformVelocityMotion/service/UniformVelocityMotionServiceImpl.cpp
+        uniformVelocityMotion/service/UniformVelocityMotionServiceImpl.h)

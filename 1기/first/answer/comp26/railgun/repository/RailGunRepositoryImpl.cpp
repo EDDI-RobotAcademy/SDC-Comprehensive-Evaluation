@@ -13,7 +13,6 @@ RailGunRepositoryImpl& RailGunRepositoryImpl::getInstance() {
 }
 
 void RailGunRepositoryImpl::fire() {
-    // TODO: need to refactor
     // 탄환 종단 속도 도달 시간
     // a = 1250 0000 0000
     // S = Vo * t + 0.5 * a * t^2
@@ -21,6 +20,7 @@ void RailGunRepositoryImpl::fire() {
     // a * t^2 = 100 * 2
     // t^2 = 200 / 125000000000
     // t = sqrt(200 / 125000000000) = 0.00004
+
 
     // 탄환의 종단 속도
     // V = Vo + a * t

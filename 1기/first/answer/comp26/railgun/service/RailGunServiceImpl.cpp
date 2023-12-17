@@ -3,8 +3,10 @@
 //
 
 #include "RailGunServiceImpl.h"
+#include "../../uniformAccelerationMotion/service/UniformAccelerationMotionServiceImpl.h"
 
 #include <iostream>
+#include <iomanip>
 
 RailGunServiceImpl RailGunServiceImpl::instance(nullptr);
 
@@ -25,5 +27,13 @@ RailGunServiceImpl& RailGunServiceImpl::getInstance() {
 
 void RailGunServiceImpl::fire() {
     std::cout << "Service: Fire!" << std::endl;
+
+    UniformAccelerationMotionServiceImpl& uniformAccelerationMotionService = UniformAccelerationMotionServiceImpl::getInstance();
+    double timeToReachTerminalVelocity = uniformAccelerationMotionService.calculateTime(100, 125000000000);
+    std::cout << "탄환 가속에 소요된 시간: " << std::fixed << std::setprecision(5)
+            << timeToReachTerminalVelocity << std::endl;
+
+    //UniformVelocityMotionServiceImpl& uniformVelocityMotionService;
+
     railGunRepository->fire();
 }
