@@ -14,7 +14,7 @@ private:
 
 public:
     static RailGunRepositoryImpl& getInstance();
-    void fire() override;
+    void fire(double expectedTime) override;
 };
 
 

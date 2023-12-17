@@ -8,7 +8,7 @@
 class RailGunRepository {
 
 public:
-    virtual void fire() = 0;
+    virtual void fire(double expectedTime) = 0;
 };
 
 #endif //COMP26_RAILGUNREPOSITORY_H

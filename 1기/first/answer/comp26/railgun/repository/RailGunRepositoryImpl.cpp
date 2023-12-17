@@ -12,7 +12,7 @@ RailGunRepositoryImpl& RailGunRepositoryImpl::getInstance() {
     return instance;
 }
 
-void RailGunRepositoryImpl::fire() {
+void RailGunRepositoryImpl::fire(double expectedTime) {
     // 탄환 종단 속도 도달 시간
     // a = 1250 0000 0000
     // S = Vo * t + 0.5 * a * t^2
@@ -20,7 +20,6 @@ void RailGunRepositoryImpl::fire() {
     // a * t^2 = 100 * 2
     // t^2 = 200 / 125000000000
     // t = sqrt(200 / 125000000000) = 0.00004
-
 
     // 탄환의 종단 속도
     // V = Vo + a * t
@@ -31,6 +30,6 @@ void RailGunRepositoryImpl::fire() {
     // 적함과의 거리 = 10000 km
     // 초당 5000 km 를 이동하므로 2초
 
-    std::cout << "Repository: Fire!" << std::endl;
-    std::cout << "Hit after: 2.00004 초" << std::endl;
+    std::cout << "RailGun Repository: Fire!" << std::endl;
+    std::cout << "Hit after: " << expectedTime << "초 예상" << std::endl;
 }

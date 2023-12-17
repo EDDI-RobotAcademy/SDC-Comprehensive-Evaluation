@@ -13,7 +13,7 @@ UniformVelocityMotionRepositoryImpl &UniformVelocityMotionRepositoryImpl::getIns
 }
 
 double UniformVelocityMotionRepositoryImpl::calculateTime(double distance, double velocity) {
-    std::cout << "Repository: calculateTime()" << std::endl;
+    std::cout << "Uniform Velocity Repository: calculateTime()" << std::endl;
     // S = V * t
     // t = S / V
     return distance / velocity;

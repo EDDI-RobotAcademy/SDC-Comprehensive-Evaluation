@@ -6,6 +6,7 @@
 #define UNIQUETEST_UNIFORMVELOCITYMOTIONREPOSITORY_H
 
 class UniformVelocityMotionRepository {
+public:
     virtual double calculateTime(double distance, double velocity) = 0;
 };
 

@@ -8,6 +8,7 @@
 class UniformAccelerationMotionRepository {
 public:
     virtual double calculateTime(double distance, double acceleration) = 0;
+    virtual double calculateTerminalVelocity(double time) = 0;
 };
 
 #endif //UNIQUETEST_UNIFORMACCELERATIONMOTIONREPOSITORY_H

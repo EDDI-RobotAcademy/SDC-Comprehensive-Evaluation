@@ -16,6 +16,8 @@ private:
 public:
     static UniformAccelerationMotionRepositoryImpl& getInstance();
     double calculateTime(double distance, double acceleration) override;
+
+    double calculateTerminalVelocity(double time) override;
 };
 
 
