@@ -1,0 +1,3 @@
+/home/eddi/proj/SDC-AI-LectureNotes/c/junyeonkim/comp12/cmake-build-debug/CMakeFiles/comp12.dir
+/home/eddi/proj/SDC-AI-LectureNotes/c/junyeonkim/comp12/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/eddi/proj/SDC-AI-LectureNotes/c/junyeonkim/comp12/cmake-build-debug/CMakeFiles/rebuild_cache.dir
