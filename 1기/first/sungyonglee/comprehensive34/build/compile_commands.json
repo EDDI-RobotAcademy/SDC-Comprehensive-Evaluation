@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/eddi/proj/SDC-Comprehensive-Evaluation/1기/first/sungyonglee/comprehensive34/build",
+  "command": "clang    -g -g -std=gnu99 -o CMakeFiles/test_app.dir/main.c.o -c /home/eddi/proj/SDC-Comprehensive-Evaluation/1기/first/sungyonglee/comprehensive34/main.c",
+  "file": "/home/eddi/proj/SDC-Comprehensive-Evaluation/1기/first/sungyonglee/comprehensive34/main.c"
+}
+]
